@@ -1,0 +1,56 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Edición de empleado</h3>
+    <form (ngSubmit)="onSubmit()" #empleadoForm="ngForm">
+        <div class="form-group">
+            <label>Nombre : </label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="persona.nombre" name="nombre" required
+                minlength="4" maxlength="10" placeholder="Digite su nombre" #nombre="ngModel">
+            <!--<div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                <div *ngIf="nombre.errors?.required">
+                    Digite su nombre por favor
+                </div>
+                <div *ngIf="nombre.errors.minlength">
+                    El nombre tiene que contener como minimo 4 caracteres
+                </div>
+                <div *ngIf="nombre.errors.maxlength">
+                    El nombre tiene que tener como maximo 10 caracteres
+                </div>
+            </div>-->
+        </div>
+
+        <div class="form-group">
+            <label>Apellido Paterno: </label>
+            <input type="text" class="form-control" id="apepaterno" [(ngModel)]="persona.apepaterno" name="apepaterno"
+                required minlength="4" maxlength="10" placeholder="Digite su apellido Paterno" #apellido="ngModel">
+            <!--<div class="alert alert-danger" *ngIf="apepaterno.invalid && (apepaterno.dirty || apepaterno.touched)">
+                <div *ngIf="apellido.errors.required">
+                    Digite su apellido por favor
+                </div>
+                <div *ngIf="apellido.errors.minlength">
+                    El apellido tiene que contener como minimo 4 caracteres
+                </div>
+                <div *ngIf="apellido.errors.maxlength">
+                    El apellido tiene que tener como maximo 10 caracteres
+                </div>
+            </div>-->
+        </div>
+        <div class="form-group">
+            <label>Apellido Materno: </label>
+            <input type="text" class="form-control" id="apematerno" [(ngModel)]="persona.apematerno" name="apematerno" required
+                minlength="4" maxlength="10" placeholder="Digite su apellido Materno" #apellido="ngModel">
+            <!--<div class="alert alert-danger" *ngIf="apematerno.invalid && (apematerno.dirty || apematerno.touched)">
+                <div *ngIf="apellido.errors.required">
+                    Digite su apellido por favor
+                </div>
+                <div *ngIf="apellido.errors.minlength">
+                    El apellido tiene que contener como minimo 4 caracteres
+                </div>
+                <div *ngIf="apellido.errors.maxlength">
+                    El apellido tiene que tener como maximo 10 caracteres
+                </div>
+            </div>-->
+        </div>
+
+        <button class="btn btn-success" [disabled]="!empleadoForm.form.valid">Guardar</button>
+    </form>
+</div>
